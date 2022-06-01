@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: clamp(20rem, 100vw, 70rem);
+}
+
+.logo:hover > path {
+  @apply fill-cyber-yellow;
+}
+
+.big-link {
+  @apply bg-eerie-black px-2 py-1 font-bold;
+  color: #fff;
+}
+
+.big-link:hover {
+  @apply bg-cyber-yellow text-eerie-black;
+}
