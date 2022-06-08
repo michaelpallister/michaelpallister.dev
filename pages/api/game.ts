@@ -1,13 +1,20 @@
 import * as cheerio from 'cheerio';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../lib/prisma';
+interface Games {
+  title: string;
+  completion: string;
+  platinum: boolean;
+  image: string;
+  platform: string;
+}
 
 const games = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const response = await fetch(`https://psnprofiles.com/micpuk`);
     const htmlString = await response.text();
     const $ = cheerio.load(htmlString);
-    const games: Object[] = [];
+    const games: Games[] = [];
     $('#gamesTable tr:nth-of-type(-n + 9)').each(function (this) {
       const title = $(this).find('.title').text();
       const completion = $(this).find('.progress-bar span').text();
@@ -23,7 +30,7 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
         image,
       };
 
-      games.push(obj);
+      games.push(obj as Games);
     });
 
     await prisma.games.createMany({
