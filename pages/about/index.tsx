@@ -57,26 +57,26 @@ const About = (props: Games) => {
       </Head>
 
       <main className='container'>
-        <h1 className='text-xl font-medium flex items-center text-white uppercase'>
+        <h1 className='text-xl font-medium flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2'>
           About me
         </h1>
         <p className='text-2xl mt-2 lg:mt-4 text-white'>
-          Hi, I'm Michael Pallister. A developer from the North East of England.
-          I have over a decade of experience working on projects of all sizes,
-          from marketing sites to SaaS products to e-commerce monorepos.
+          Hi, I&#39;m Michael Pallister. A developer from the North East of
+          England. I have over a decade of experience working on projects of all
+          sizes, from marketing sites to SaaS products to e-commerce monorepos.
         </p>
         <p className='text-2xl mt-2 lg:mt-4 text-white'>
           Along the way, I have been fortunate enough to produce work for global
-          brands like the BBC, Mitre, Gola, Kickers and the UK's largest
+          brands like the BBC, Mitre, Gola, Kickers and the UK&#39;s largest
           electrical wholesaler CEF.
         </p>
         <p className='text-2xl mt-2 lg:mt-4 text-white'>
           I enjoy creating scalable and maintainable front-ends.
         </p>
         <p className='text-2xl mt-2 lg:mt-4 text-white'>
-          I'm a dad to a 16-month old girl and in the little spare time I have,
-          I enjoy gaming, collecting game consoles, tinkering with electronics
-          and running.
+          I&#39;m a dad to a 16-month old girl and in the little spare time I
+          have, I enjoy gaming, collecting game consoles, tinkering with
+          electronics and running.
         </p>
         <section>
           <h2 className='mt-20 mb-4 text-xl font-medium text-white uppercase border-b border-mine-shaft-solid pb-2'>
