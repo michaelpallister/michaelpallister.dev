@@ -22,3 +22,7 @@ body {
 .big-link:hover {
   @apply bg-surfie-green text-white;
 }
+
+.about__heading {
+  @apply text-xl font-medium flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2 tracking-wider;
+}

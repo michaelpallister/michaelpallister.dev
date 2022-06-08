@@ -5,7 +5,7 @@ import Link from 'next/link';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className='flex flex-col justify-between min-h-screen'>
-      <header className='mt-3 mb-20 border-b border-mine-shaft-solid pb-3'>
+      <header className='mt-3 mb-10 md:mb-20 border-b border-mine-shaft-solid pb-3'>
         <div className='container flex justify-between items-center'>
           <Link href='/'>
             <a className='inline-block'>

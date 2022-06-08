@@ -11,11 +11,13 @@ interface Games {
 
 const games = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    await prisma.games.deleteMany({});
+
     const response = await fetch(`https://psnprofiles.com/micpuk`);
     const htmlString = await response.text();
     const $ = cheerio.load(htmlString);
     const games: Games[] = [];
-    $('#gamesTable tr:nth-of-type(-n + 9)').each(function (this) {
+    $('#gamesTable tr:nth-of-type(-n + 12)').each(function (this) {
       const title = $(this).find('.title').text();
       const completion = $(this).find('.progress-bar span').text();
       const platform = $(this).find('.platforms .platform').text();

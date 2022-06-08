@@ -22,6 +22,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&display=swap'
             rel='stylesheet'
           />
+          <meta name='theme-color' content='#14FFEC'></meta>
         </Head>
         <body className='bg-mine-shaft font-sans'>
           <Main />
