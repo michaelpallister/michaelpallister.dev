@@ -15,15 +15,10 @@ body {
   width: clamp(20rem, 100vw, 70rem);
 }
 
-.logo:hover > path {
-  @apply fill-cyber-yellow;
-}
-
 .big-link {
-  @apply bg-eerie-black px-2 py-1 font-bold;
-  color: #fff;
+  @apply bg-cyan px-2 py-0.5 font-bold text-mine-shaft-solid;
 }
 
 .big-link:hover {
-  @apply bg-cyber-yellow text-eerie-black;
+  @apply bg-surfie-green text-white;
 }

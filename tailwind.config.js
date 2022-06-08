@@ -7,11 +7,11 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'light-grey': '#D6D6D6',
-      aureolin: '#FFEE32',
-      'cyber-yellow': '#FFD100',
-      'eerie-black': '#202020',
-      jet: '#333533',
+      'mine-shaft': '#212121',
+      'mine-shaft-solid': '#323232',
+      'surfie-green': '#0D7377',
+      cyan: '#14FFEC',
+      white: '#fff',
     },
     extend: {
       fontFamily: {

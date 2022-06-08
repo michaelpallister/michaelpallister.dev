@@ -19,18 +19,27 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const About: NextPage = (props) => {
   const games = props.allGames.map((g: Game) => (
-    <li
-      key={g.id}
-      className='bg-jet rounded p-4 bg-opacity-25 flex items-start justify-between'
-    >
-      <div>
-        <p>{g.title}</p>
-        <p>{g.completion}</p>
-        <p>{g.platinum ? 'true' : 'false'}</p>
-      </div>
-      <div className='flex flex-col justify-between h-full text-right'>
-        <Image src={g.image} height='56' width='200' alt='' objectFit='cover' />
-        <p>{g.platform}</p>
+    <li key={g.id}>
+      <div className='h-0.5 bg-gradient-to-l from-surfie-green to-cyan rounded-tl rounded-tr'></div>
+      <div className='bg-mine-shaft-solid rounded-bl rounded-br p-4'>
+        <div className='flex items-start justify-between'>
+          <div className='flex flex-col justify-between h-full mr-4'>
+            <p className='text-sm uppercase mb-4 text-white font-medium'>
+              {g.title}
+            </p>
+            <p>{g.completion}</p>
+          </div>
+          <div className='flex flex-col justify-between h-full text-right flex-shrink-0'>
+            <Image
+              src={g.image}
+              height='56'
+              width='100'
+              alt=''
+              objectFit='cover'
+            />
+            <p>{g.platform}</p>
+          </div>
+        </div>
       </div>
     </li>
   ));
@@ -44,16 +53,33 @@ const About: NextPage = (props) => {
       </Head>
 
       <main className='container'>
-        <h1 className='text-6xl lg:text-4xl font-bold flex items-center'>
+        <h1 className='text-xl font-medium flex items-center text-white uppercase'>
           About me
         </h1>
-        <p className='text-2xl mt-2 lg:mt-4'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem
-          corrupti hic. Veniam quia maxime in dicta harum veritatis sapiente
-          porro, ipsa quasi vel corrupti eveniet suscipit ipsam enim at.
+        <p className='text-2xl mt-2 lg:mt-4 text-white'>
+          Hi, I'm Michael Pallister. A developer from the North East of England.
+          I have over a decade of experience working on projects of all sizes,
+          from marketing sites to SaaS products to e-commerce monorepos.
         </p>
-        <h2 className='mt-20 mb-4 text-xl font-bold'>Recently played</h2>
-        <ul className='mb-10 grid grid-cols-3 gap-4'>{games}</ul>
+        <p className='text-2xl mt-2 lg:mt-4 text-white'>
+          Along the way, I have been fortunate enough to produce work for global
+          brands like the BBC, Mitre, Gola, Kickers and the UK's largest
+          electrical wholesaler CEF.
+        </p>
+        <p className='text-2xl mt-2 lg:mt-4 text-white'>
+          I enjoy creating scalable and maintainable front-ends.
+        </p>
+        <p className='text-2xl mt-2 lg:mt-4 text-white'>
+          I'm a dad to a 16-month old girl and in the little spare time I have,
+          I enjoy gaming, collecting game consoles, tinkering with electronics
+          and running.
+        </p>
+        <section>
+          <h2 className='mt-20 mb-4 text-xl font-medium text-white uppercase border-b border-mine-shaft-solid pb-2'>
+            Recently played
+          </h2>
+          <ul className='mb-10 grid grid-cols-3 gap-4'>{games}</ul>
+        </section>
       </main>
     </div>
   );

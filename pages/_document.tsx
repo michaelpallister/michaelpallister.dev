@@ -19,11 +19,11 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           <link
-            href='https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&display=swap'
             rel='stylesheet'
           />
         </Head>
-        <body className='bg-light-grey font-sans'>
+        <body className='bg-mine-shaft font-sans'>
           <Main />
           <NextScript />
         </body>
