@@ -13,7 +13,7 @@ interface Game {
 }
 
 interface Games {
-  allGames: [];
+  allGames: Game[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
