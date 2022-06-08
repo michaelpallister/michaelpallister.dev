@@ -12,12 +12,16 @@ interface Game {
   platform: string;
 }
 
+interface Games {
+  allGames: [];
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const allGames = await prisma.games.findMany();
   return { props: { allGames } };
 };
 
-const About: NextPage = (props) => {
+const About = (props: Games) => {
   const games = props.allGames.map((g: Game) => (
     <li key={g.id}>
       <div className='h-0.5 bg-gradient-to-l from-surfie-green to-cyan rounded-tl rounded-tr'></div>
