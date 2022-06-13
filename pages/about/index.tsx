@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import useSWR from 'swr';
-import GameCard from '../../components/GameCard';
+import GameCard from '../../components/gameCard';
 
 interface Game {
   id: string;
