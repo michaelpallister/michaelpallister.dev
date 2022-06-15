@@ -33,7 +33,7 @@ li {
 }
 
 .heading {
-  @apply text-xl font-medium flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2 tracking-wider;
+  @apply text-xl font-bold flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2 tracking-wider;
 }
 
 .job {
@@ -41,7 +41,7 @@ li {
 }
 
 .job__title {
-  @apply text-lg font-black mb-1 text-transparent tracking-wide bg-clip-text bg-gradient-to-br to-cyan from-surfie-green;
+  @apply text-lg font-bold mb-1 text-transparent tracking-wide bg-clip-text bg-gradient-to-br from-surfie-green to-cyan;
 }
 
 .job__date {

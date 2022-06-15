@@ -28,17 +28,19 @@ function MyApp({ Component, pageProps }: AppProps) {
           </Link>
           <nav>
             <Link href='/'>
-              <a className='hover:underline text-white  hover:text-cyan mr-4'>
+              <a className='hover:underline text-white  hover:text-cyan mr-8 font-bold uppercase tracking-wide'>
                 Home
               </a>
             </Link>
             <Link href='/about'>
-              <a className='hover:underline text-white  hover:text-cyan mr-4'>
+              <a className='hover:underline text-white  hover:text-cyan mr-8 font-bold uppercase tracking-wide'>
                 About
               </a>
             </Link>
             <Link href='/cv'>
-              <a className='hover:underline text-white hover:text-cyan'>CV</a>
+              <a className='hover:underline text-white hover:text-cyan font-bold uppercase tracking-wide'>
+                CV
+              </a>
             </Link>
           </nav>
         </div>

@@ -19,7 +19,7 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           <link
-            href='https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap'
             rel='stylesheet'
           />
           <meta name='theme-color' content='#14FFEC'></meta>

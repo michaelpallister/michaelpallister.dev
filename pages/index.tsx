@@ -17,7 +17,7 @@ const Home: NextPage = (props) => {
       </Head>
 
       <main className='container'>
-        <h1 className='text-6xl lg:text-8xl font-bold flex items-center text-white'>
+        <h1 className='text-6xl lg:text-8xl font-black flex items-center text-white'>
           Hi, I am Michael.
         </h1>
         <p className='text-2xl mt-2 lg:text-4xl lg:mt-4 lg:leading-snug lg:w-2/3 text-white'>
