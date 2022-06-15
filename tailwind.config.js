@@ -6,14 +6,14 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    colors: {
-      'mine-shaft': '#212121',
-      'mine-shaft-solid': '#323232',
-      'surfie-green': '#0D7377',
-      cyan: '#14FFEC',
-      white: '#fff',
-    },
     extend: {
+      colors: {
+        'mine-shaft': '#212121',
+        'mine-shaft-solid': '#323232',
+        'surfie-green': '#0D7377',
+        cyan: '#14FFEC',
+        white: '#fff',
+      },
       fontFamily: {
         sans: ['Raleway', ...defaultTheme.fontFamily.sans],
       },
