@@ -47,7 +47,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </header>
       <Component {...pageProps} />
       <footer className='container h-16 flex items-center'>
-        <p className='text-sm text-white'>&copy; Michael Pallister</p>
+        <p className='text-sm text-white'>
+          &copy; Nobody, steal what you need.
+        </p>
       </footer>
     </div>
   );

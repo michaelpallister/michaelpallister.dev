@@ -25,7 +25,7 @@ li {
 }
 
 .big-link {
-  @apply bg-cyan px-2 py-0.5 font-bold text-mine-shaft-solid;
+  @apply bg-gradient-to-br from-surfie-green to-cyan px-2 py-0.5 font-bold text-mine-shaft-solid;
 }
 
 .big-link:hover {
@@ -33,7 +33,7 @@ li {
 }
 
 .heading {
-  @apply text-xl font-bold flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2 tracking-wider;
+  @apply text-3xl font-bold flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2 tracking-wider;
 }
 
 .job {
@@ -54,7 +54,7 @@ li {
 }
 
 .tags {
-  @apply flex gap-2;
+  @apply flex flex-wrap gap-2;
 }
 
 .tag {
