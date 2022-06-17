@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Script
         strategy='afterInteractive'
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TAG}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-43SQHCEZKS`}
       />
       <Script
         id='gtag-init'
@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.GA_TAG}', {
+            gtag('config', 'G-43SQHCEZKS', {
               page_path: window.location.pathname,
             });
           `,

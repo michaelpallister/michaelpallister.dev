@@ -1,5 +1,3 @@
-export const GA_ID = process.env.GA_TAG;
-
 declare global {
   interface Window {
     gtag?: any;
@@ -7,7 +5,7 @@ declare global {
 }
 
 export const pageview = (url: string) => {
-  window.gtag('config', GA_ID, {
+  window.gtag('config', 'G-43SQHCEZKS', {
     page_path: url,
   });
 };
