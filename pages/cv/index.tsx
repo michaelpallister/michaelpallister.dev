@@ -64,6 +64,7 @@ const CV = () => {
             <li className='tag'>React</li>
             <li className='tag'>React Native</li>
             <li className='tag'>Vue</li>
+            <li className='tag'>Node.js</li>
             <li className='tag'>PHP - Laravel</li>
           </ul>
         </section>
