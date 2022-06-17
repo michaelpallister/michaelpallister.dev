@@ -20,7 +20,7 @@ const GameCard = ({
             <p className='text-sm uppercase text-white font-medium mb-4 tracking-wide'>
               {title} - {completion}
             </p>
-            <p className='bg-white place-self-start px-2 py-1 text-xs font-medium'>
+            <p className='bg-white text-mine-shaft place-self-start px-2 py-1 text-xs font-semibold rounded'>
               {platform}
             </p>
           </div>

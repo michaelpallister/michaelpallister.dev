@@ -28,17 +28,28 @@ function MyApp({ Component, pageProps }: AppProps) {
           </Link>
           <nav>
             <Link href='/'>
-              <a className='hover:underline text-white mr-4'>Home</a>
+              <a className='hover:underline text-white  hover:text-cyan mr-8 font-bold uppercase tracking-wide'>
+                Home
+              </a>
             </Link>
             <Link href='/about'>
-              <a className='hover:underline text-white'>About</a>
+              <a className='hover:underline text-white  hover:text-cyan mr-8 font-bold uppercase tracking-wide'>
+                About
+              </a>
+            </Link>
+            <Link href='/cv'>
+              <a className='hover:underline text-white hover:text-cyan font-bold uppercase tracking-wide'>
+                CV
+              </a>
             </Link>
           </nav>
         </div>
       </header>
       <Component {...pageProps} />
       <footer className='container h-16 flex items-center'>
-        <p className='text-sm text-white'>&copy; Michael Pallister</p>
+        <p className='text-sm text-white'>
+          &copy; Nobody, steal what you need.
+        </p>
       </footer>
     </div>
   );

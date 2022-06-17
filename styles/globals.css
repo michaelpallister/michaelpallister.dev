@@ -7,6 +7,15 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  @apply text-white;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -16,13 +25,38 @@ body {
 }
 
 .big-link {
-  @apply bg-cyan px-2 py-0.5 font-bold text-mine-shaft-solid;
+  @apply bg-gradient-to-br from-surfie-green to-cyan px-2 py-0.5 font-bold text-mine-shaft-solid;
 }
 
 .big-link:hover {
   @apply bg-surfie-green text-white;
 }
 
-.about__heading {
-  @apply text-xl font-medium flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2 tracking-wider;
+.heading {
+  @apply text-3xl font-bold flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2 tracking-wider;
+}
+
+.job {
+  @apply mb-12;
+}
+
+.job__title {
+  @apply text-lg font-bold mb-1 text-transparent tracking-wide bg-clip-text bg-gradient-to-br from-surfie-green to-cyan;
+}
+
+.job__date {
+  @apply text-sm mb-4;
+}
+
+.job p:not(.job__date) {
+  @apply mb-4;
+  max-width: 70ch;
+}
+
+.tags {
+  @apply flex flex-wrap gap-2;
+}
+
+.tag {
+  @apply bg-mine-shaft-solid text-white text-xs px-3 py-2 rounded;
 }
