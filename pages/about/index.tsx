@@ -33,7 +33,7 @@ const About = (props: Games) => {
       </Head>
 
       <main className='container'>
-        <h1 className='heading'>About me</h1>
+        <h1 className='heading mb-8'>About me</h1>
         <p className='about__p'>
           Hi, I&#39;m Michael Pallister. A developer from the North East of
           England. I have over a decade of experience working on projects of all
