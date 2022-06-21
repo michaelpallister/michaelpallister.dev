@@ -33,21 +33,21 @@ const About = (props: Games) => {
       </Head>
 
       <main className='container'>
-        <h1 className='heading'>About me</h1>
-        <p className='mt-2 lg:mt-4 text-white'>
+        <h1 className='heading mb-8'>About me</h1>
+        <p className='about__p'>
           Hi, I&#39;m Michael Pallister. A developer from the North East of
           England. I have over a decade of experience working on projects of all
           sizes, from marketing sites to SaaS products to e-commerce monorepos.
         </p>
-        <p className='mt-2 lg:mt-4 text-white'>
+        <p className='about__p'>
           Along the way, I have been fortunate enough to produce work for global
           brands like the BBC, Mitre, Gola, Kickers and the UK&#39;s largest
           electrical wholesaler CEF.
         </p>
-        <p className='mt-2 lg:mt-4 text-white'>
+        <p className='about__p'>
           I enjoy creating scalable and maintainable front-ends.
         </p>
-        <p className='mt-2 lg:mt-4 text-white'>
+        <p className='about__p'>
           I&#39;m a dad to a 16-month old girl and in the little spare time I
           have; I enjoy gaming, collecting game consoles, tinkering with
           electronics and running.

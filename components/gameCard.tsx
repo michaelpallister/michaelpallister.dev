@@ -17,10 +17,10 @@ const GameCard = ({
       <div className='bg-mine-shaft-solid rounded-bl rounded-br p-4 h-full'>
         <div className='flex items-start justify-between h-full'>
           <div className='mr-4 flex-1 flex flex-col justify-between h-full'>
-            <p className='text-sm uppercase text-white font-medium mb-4 tracking-wide'>
+            <p className='text-sm text-gray-300 mb-4 font-medium tracking-tight'>
               {title} - {completion}
             </p>
-            <p className='bg-white text-mine-shaft place-self-start px-2 py-1 text-xs font-semibold rounded'>
+            <p className='bg-white text-mine-shaft place-self-start px-2 py-1 text-xs font-extrabold rounded'>
               {platform}
             </p>
           </div>

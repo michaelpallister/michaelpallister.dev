@@ -13,7 +13,7 @@ h3,
 p,
 ul,
 li {
-  @apply text-white;
+  @apply text-gray-300;
 }
 
 .container {
@@ -24,16 +24,13 @@ li {
   width: clamp(20rem, 100vw, 70rem);
 }
 
-.big-link {
-  @apply bg-gradient-to-br from-surfie-green to-cyan px-2 py-0.5 font-bold text-mine-shaft-solid;
-}
-
-.big-link:hover {
-  @apply bg-surfie-green text-white;
-}
-
 .heading {
-  @apply text-3xl font-bold flex items-center text-white uppercase border-b border-mine-shaft-solid pb-2 tracking-wider;
+  @apply text-3xl font-extrabold flex items-center text-gray-300 border-b border-mine-shaft-solid pb-2 tracking-tight text-gray-300;
+}
+
+.about__p {
+  @apply mt-2 lg:mt-6 text-gray-300;
+  max-width: 70ch;
 }
 
 .job {
@@ -41,7 +38,7 @@ li {
 }
 
 .job__title {
-  @apply text-lg font-bold mb-1 text-transparent tracking-wide bg-clip-text bg-gradient-to-br from-surfie-green to-cyan;
+  @apply text-lg font-extrabold mb-1 text-transparent tracking-tight bg-clip-text bg-gradient-to-br from-surfie-green to-cyan;
 }
 
 .job__date {
@@ -58,5 +55,5 @@ li {
 }
 
 .tag {
-  @apply bg-mine-shaft-solid text-white text-xs px-3 py-2 rounded;
+  @apply bg-mine-shaft-solid text-gray-300 text-xs px-3 py-2 rounded;
 }

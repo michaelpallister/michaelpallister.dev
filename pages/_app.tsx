@@ -64,17 +64,17 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Link>
             <nav>
               <Link href='/'>
-                <a className='hover:underline text-white  hover:text-cyan mr-8 font-bold uppercase tracking-wide'>
+                <a className='hover:underline text-gray-300  hover:text-cyan mr-8 font-medium'>
                   Home
                 </a>
               </Link>
               <Link href='/about'>
-                <a className='hover:underline text-white  hover:text-cyan mr-8 font-bold uppercase tracking-wide'>
+                <a className='hover:underline text-gray-300  hover:text-cyan mr-8 font-medium'>
                   About
                 </a>
               </Link>
               <Link href='/cv'>
-                <a className='hover:underline text-white hover:text-cyan font-bold uppercase tracking-wide'>
+                <a className='hover:underline text-gray-300 hover:text-cyan font-medium'>
                   CV
                 </a>
               </Link>
@@ -83,7 +83,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </header>
         <Component {...pageProps} />
         <footer className='container h-16 flex items-center'>
-          <p className='text-sm text-white'>
+          <p className='text-sm text-gray-300'>
             &copy; Nobody, steal what you need.
           </p>
         </footer>
