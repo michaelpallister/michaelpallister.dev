@@ -15,7 +15,7 @@ module.exports = {
         white: '#fff',
       },
       fontFamily: {
-        sans: ['Raleway', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
     },
   },

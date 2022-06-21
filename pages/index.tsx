@@ -17,13 +17,13 @@ const Home: NextPage = (props) => {
       </Head>
 
       <main className='container'>
-        <h1 className='text-6xl lg:text-8xl font-black flex items-center text-transparent tracking-wide bg-clip-text bg-gradient-to-br from-surfie-green to-cyan'>
+        <h1 className='text-6xl font-extrabold flex items-center text-transparent tracking-tight bg-clip-text bg-gradient-to-br from-surfie-green to-cyan'>
           Hi, I am Michael.
         </h1>
-        <p className='text-2xl mt-2 lg:text-4xl lg:mt-4 lg:leading-snug lg:w-2/3 text-white'>
+        <p className='text-4xl tracking-tight font-extrabold mt-2 lg lg:mt-4 lg:w-2/3 text-gray-300'>
           I build websites, collect games consoles, tinker with electronics and{' '}
           <a
-            className='big-link'
+            className='underline hover:text-cyan'
             href='https://www.strava.com/athletes/10793089'
             target='_blank'
             rel='noreferrer noopener'
