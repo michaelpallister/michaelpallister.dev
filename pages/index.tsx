@@ -21,7 +21,7 @@ const Home: NextPage = (props) => {
           Hi, I am Michael.
         </h1>
         <p className='text-4xl tracking-tight font-extrabold mt-2 lg lg:mt-4 lg:w-2/3 text-gray-300'>
-          I build websites, collect games consoles, tinker with electronics and{' '}
+          I build websites, collect game consoles, tinker with electronics and{' '}
           <a
             className='underline hover:text-cyan'
             href='https://www.strava.com/athletes/10793089'

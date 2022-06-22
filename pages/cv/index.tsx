@@ -10,6 +10,28 @@ const CV = () => {
       </Head>
       <main className='container'>
         <h1 className='heading mb-8'>CV</h1>
+        <section className='intro mb-6'>
+          <p className='intro__p'>
+            I have over a decades worth of experience working in the industry
+            after graduating from Teesside University with a degree in Web
+            Design.
+          </p>
+
+          <p className='intro__p'>
+            I&apos;ve worked with everyone from small agencies to large
+            companies and in teams of varying sizes. I like semantics,
+            performance and the little details.
+          </p>
+
+          <p className='intro__p'>
+            I&apos;ve worked with a range of languages and technologies, some
+            that I have listed some below. The ever changing nature of the
+            frontend makes it hard to keep up with everything. However, in my
+            free time I enjoy keeping up with the Jamstack community, improving
+            my accessibility knowledge and the possibilities around edge
+            computing.
+          </p>
+        </section>
         <section className='job'>
           <h2 className='job__title'>Stinkyink - Senior Frontend Developer</h2>
           <p className='job__date'>January 2022 - Present</p>

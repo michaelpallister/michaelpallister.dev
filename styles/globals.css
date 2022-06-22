@@ -25,10 +25,11 @@ li {
 }
 
 .heading {
-  @apply text-3xl font-extrabold flex items-center text-gray-300 border-b border-mine-shaft-solid pb-2 tracking-tight text-gray-300;
+  @apply text-3xl font-extrabold flex items-center border-b border-mine-shaft-solid pb-2 tracking-tight text-gray-300;
 }
 
-.about__p {
+.about__p,
+.intro__p {
   @apply mt-2 lg:mt-6 text-gray-300;
   max-width: 70ch;
 }
