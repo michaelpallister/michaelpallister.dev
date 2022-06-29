@@ -9,7 +9,7 @@ const CV = () => {
         </title>
       </Head>
       <main className='container'>
-        <h1 className='heading mb-8'>CV</h1>
+        <h1 className='heading mb-8'>CV, Michael Pallister</h1>
         <section className='intro mb-6'>
           <p className='intro__p'>
             I have over a decades worth of experience working in the industry
@@ -24,11 +24,11 @@ const CV = () => {
           </p>
 
           <p className='intro__p'>
-            I&apos;ve worked with a range of languages and technologies, some
-            that I have listed below. The ever changing nature of the frontend
-            makes it hard to keep up with everything. However, in my free time I
-            enjoy keeping up with the Jamstack community, improving my
-            accessibility knowledge and the possibilities around edge computing.
+            Over the years I&apos;ve gained experience working with a range of
+            languages and technologies. I have listed some of these below.
+            Outside of work, in my free time I enjoy keeping up with the
+            Jamstack community, improving my accessibility knowledge and the
+            possibilities around edge computing.
           </p>
         </section>
         <section className='job'>
