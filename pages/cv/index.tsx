@@ -25,11 +25,10 @@ const CV = () => {
 
           <p className='intro__p'>
             I&apos;ve worked with a range of languages and technologies, some
-            that I have listed some below. The ever changing nature of the
-            frontend makes it hard to keep up with everything. However, in my
-            free time I enjoy keeping up with the Jamstack community, improving
-            my accessibility knowledge and the possibilities around edge
-            computing.
+            that I have listed below. The ever changing nature of the frontend
+            makes it hard to keep up with everything. However, in my free time I
+            enjoy keeping up with the Jamstack community, improving my
+            accessibility knowledge and the possibilities around edge computing.
           </p>
         </section>
         <section className='job'>
