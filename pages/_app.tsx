@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
 
       <div className='flex flex-col justify-between min-h-screen'>
-        <header className='mt-3 mb-10 md:mb-20 border-b border-mine-shaft-solid pb-3'>
+        <header className='mt-3 mb-10 md:mb-20 border-b border-mine-shaft-solid pb-3 print:hidden'>
           <div className='container flex justify-between items-center'>
             <Link href='/'>
               <a className='inline-block'>
@@ -82,7 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </header>
         <Component {...pageProps} />
-        <footer className='container h-16 flex items-center'>
+        <footer className='container h-16 flex items-center print:hidden'>
           <p className='text-sm text-gray-300'>
             &copy; Nobody, steal what you need.
           </p>

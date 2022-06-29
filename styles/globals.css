@@ -39,7 +39,7 @@ li {
 }
 
 .job__title {
-  @apply text-lg font-extrabold mb-1 text-transparent tracking-tight bg-clip-text bg-gradient-to-br from-surfie-green to-cyan;
+  @apply text-lg font-extrabold mb-1 text-transparent tracking-tight bg-clip-text bg-gradient-to-br from-surfie-green to-cyan print:text-black;
 }
 
 .job__date {
@@ -47,7 +47,7 @@ li {
 }
 
 .job p:not(.job__date) {
-  @apply mb-4;
+  @apply mb-4 print:max-w-full;
   max-width: 70ch;
 }
 
@@ -55,6 +55,14 @@ li {
   @apply flex flex-wrap gap-2;
 }
 
+.tags:before {
+  @apply print:content-['Stack'] block w-full font-medium underline;
+}
+
 .tag {
-  @apply bg-mine-shaft-solid text-gray-300 text-xs px-3 py-2 rounded;
+  @apply bg-mine-shaft-solid text-gray-300 text-xs px-3 py-2 print:p-0 rounded;
+}
+
+.tag:not(:last-of-type) {
+  @apply print:after:content-[','];
 }
