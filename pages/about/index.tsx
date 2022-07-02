@@ -18,7 +18,7 @@ interface Games {
 
 export const getStaticProps: GetStaticProps = async () => {
   const allGames = await prisma.games.findMany();
-  return { props: { allGames } };
+  return { props: { allGames }, revalidate: 60 };
 };
 
 const About = (props: Games) => {
