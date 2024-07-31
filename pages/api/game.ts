@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getXataClient, XataClient } from '../../lib/xata';
+import { getXataClient } from '../../lib/xata';
 
 interface Games {
   title: string;
@@ -11,10 +11,13 @@ interface Games {
 }
 
 const games = async (req: NextApiRequest, res: NextApiResponse) => {
-  const client = getXataClient();
-
   try {
-    await client.sql`DELETE * FROM "Games"`;
+    const xata = getXataClient();
+    const records = await xata.db.Games.select(['id']).getAll();
+
+    if (records) {
+      records.map((record) => xata.db.Games.delete(record));
+    }
 
     const response = await fetch(`https://psnprofiles.com/micpuk`);
     const htmlString = await response.text();
@@ -35,12 +38,10 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
         image,
       };
 
-      console.log(obj);
-
       games.push(obj as Games);
     });
 
-    games.map((game) => client.db.Games.create(game));
+    games.map((game) => xata.db.Games.create(game));
 
     res.statusCode = 200;
     return res.json({
