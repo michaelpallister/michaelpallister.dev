@@ -17,9 +17,13 @@ interface Games {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const client = getXataClient();
-  const allGames = await client.db.Games.getMany();
-  return { props: { allGames }, revalidate: 60 };
+  const xata = getXataClient();
+  const allGames = await xata.db.Games.getMany();
+
+  return {
+    props: { allGames: JSON.parse(JSON.stringify(allGames)) },
+    revalidate: 60,
+  };
 };
 
 const About = (props: Games) => {
