@@ -1,6 +1,7 @@
 import * as cheerio from 'cheerio';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import prisma from '../../lib/prisma';
+import { getXataClient } from '../../lib/xata';
+
 interface Games {
   title: string;
   completion: string;
@@ -11,7 +12,12 @@ interface Games {
 
 const games = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    await prisma.games.deleteMany({});
+    const xata = getXataClient();
+    const records = await xata.db.Games.select(['id']).getAll();
+
+    if (records) {
+      records.map((record) => xata.db.Games.delete(record));
+    }
 
     const response = await fetch(`https://psnprofiles.com/micpuk`);
     const htmlString = await response.text();
@@ -35,9 +41,7 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
       games.push(obj as Games);
     });
 
-    await prisma.games.createMany({
-      data: games,
-    });
+    games.map((game) => xata.db.Games.create(game));
 
     res.statusCode = 200;
     return res.json({

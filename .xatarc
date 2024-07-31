@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Michael-Pallister-s-workspace-30014i.eu-west-1.xata.sh/db/michaelpallister-dev",
+  "codegen": {
+    "output": "lib/xata.ts"
+  }
+}
