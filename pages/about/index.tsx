@@ -53,9 +53,9 @@ const About = (props: Games) => {
           I enjoy creating scalable and maintainable front-ends.
         </p>
         <p className="about__p">
-          I&#39;m a dad to a 18-month old girl and in the little spare time I
+          I&#39;m a dad to a 3-year old girl and in the little spare time I
           have; I enjoy gaming, collecting game consoles, tinkering with
-          electronics and running.
+          electronics, cars and running.
         </p>
         <section>
           <h2 className="heading mt-20">Recently played</h2>
