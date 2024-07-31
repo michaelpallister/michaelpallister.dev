@@ -1,0 +1,16 @@
+{
+  "id": "mig_cql9tgtql006e47gsk9g",
+  "parentID": "mig_cql9tetql006e47gsk8g",
+  "checksum": "1:e839d2fbc04721421a98cdd54dd971f791a9c6ae7dbf8ce3f7969bb76fe2c817",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "platinum",
+          "type": "bool"
+        },
+        "table": "Games"
+      }
+    }
+  ]
+}

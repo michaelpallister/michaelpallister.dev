@@ -1,0 +1,16 @@
+{
+  "id": "mig_cql9m2l9eto5ejqin210",
+  "parentID": "mig_cql9lvl9eto5ejqin200",
+  "checksum": "1:4ef282c06fd1abfce79b444c1827d761f59d652ca2b80fc4ce8150c1131baf73",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "platform",
+          "type": "string"
+        },
+        "table": "Games"
+      }
+    }
+  ]
+}

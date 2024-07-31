@@ -1,0 +1,16 @@
+{
+  "id": "mig_cql9m859eto5ejqin220",
+  "parentID": "mig_cql9m59v28r7n8dt134g",
+  "checksum": "1:aef824af6e18cec91a56f9f6e59edd23408a9f574aeb346a65b49023d004177c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "image",
+          "type": "string"
+        },
+        "table": "Games"
+      }
+    }
+  ]
+}

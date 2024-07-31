@@ -1,0 +1,13 @@
+{
+  "id": "mig_cql9tetql006e47gsk8g",
+  "parentID": "mig_cql9m859eto5ejqin220",
+  "checksum": "1:2ac9cd3e551e29d1a852804a94b5cb680a9db943b91f592a9c49017551e0912c",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "platinum",
+        "table": "Games"
+      }
+    }
+  ]
+}
