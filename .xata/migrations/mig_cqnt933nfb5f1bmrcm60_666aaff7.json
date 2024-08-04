@@ -1,0 +1,16 @@
+{
+  "id": "mig_cqnt933nfb5f1bmrcm60",
+  "parentID": "mig_cqnt8m3nfb5f1bmrcm50",
+  "checksum": "1:666aaff7151df713d2301d62a51ff9da4f0d25dffdb1936a411a313456a91a8b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "activities",
+          "type": "json"
+        },
+        "table": "Strava"
+      }
+    }
+  ]
+}
