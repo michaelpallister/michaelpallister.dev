@@ -17,6 +17,14 @@ const tables = [
       { name: "platinum", type: "bool" },
     ],
   },
+  {
+    name: "Strava",
+    columns: [
+      { name: "monthlyDistance", type: "string" },
+      { name: "monthlyTime", type: "string" },
+      { name: "activities", type: "json" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -25,8 +33,12 @@ export type InferredTypes = SchemaInference<SchemaTables>;
 export type Games = InferredTypes["Games"];
 export type GamesRecord = Games & XataRecord;
 
+export type Strava = InferredTypes["Strava"];
+export type StravaRecord = Strava & XataRecord;
+
 export type DatabaseSchema = {
   Games: GamesRecord;
+  Strava: StravaRecord;
 };
 
 const DatabaseClient = buildClient();

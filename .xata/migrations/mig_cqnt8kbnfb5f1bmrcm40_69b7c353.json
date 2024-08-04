@@ -1,0 +1,16 @@
+{
+  "id": "mig_cqnt8kbnfb5f1bmrcm40",
+  "parentID": "mig_cqnt8djnfb5f1bmrcm30",
+  "checksum": "1:69b7c3536ac20bb1503bd99be038f0a1f5d95d92628d6e2b52000228f4804f6c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "monthlyDistance",
+          "type": "string"
+        },
+        "table": "Strava"
+      }
+    }
+  ]
+}

@@ -1,36 +1,78 @@
 import * as cheerio from 'cheerio';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getXataClient } from '../../lib/xata';
+import { getXataClient, StravaRecord } from '../../lib/xata';
 
-// interface Games {
-//   title: string;
-//   completion: string;
-//   platinum: boolean;
-//   image: string;
-//   platform: string;
-// }
+type Activities = {
+  monthlyDistance: string;
+  monthlyTime: string;
+  activities: Activity[];
+};
+
+type Activity = {
+  date: string;
+  name: string;
+  distance: string;
+  time: string;
+};
 
 const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    // const xata = getXataClient();
-    // const records = await xata.db.Games.select(['id']).getAll();
-
+    const xata = getXataClient();
+    const getFirstRecord = await xata.db.Strava.getFirst();
+    const distanceCheck = getFirstRecord?.monthlyDistance;
     // if (records) {
     //   records.map((record) => xata.db.Games.delete(record));
     // }
 
-    const response = await fetch(`https://www.strava.com/athletes/10793089k`);
+    const response = await fetch(`https://www.strava.com/athletes/10793089`);
     const htmlString = await response.text();
     const $ = cheerio.load(htmlString);
-    const data = [];
+    const strava: Activities[] = [];
 
-    console.log(data);
+    const distanceAndTimeElements = $(
+      '[data-cy="monthly-stat-distance"] .Stat_statValue__3_kAe, [data-cy="monthly-stat-time"] .Stat_statValue__3_kAe'
+    );
 
-    // games.map((game) => xata.db.Games.create(game));
+    const monthlyDistance = distanceAndTimeElements.eq(0).text();
+    const monthlyTime = distanceAndTimeElements.eq(1).text();
+
+    const recentActivities = $('[data-testid="recent-activity"]');
+
+    const activities: Activity[] = [];
+
+    recentActivities.each(function (this) {
+      const date = $(this).find('.RecentActivities_timestamp__pB9a8').text();
+      const name = $(this).find('[data-cy="recent-activity-name"]').text();
+      const distance = $(this)
+        .find(
+          '.styles_listStats__wQVTf li:first-of-type .Stat_statValue__3_kAe'
+        )
+        .text();
+      const time = $(this)
+        .find('.styles_listStats__wQVTf li:last-of-type .Stat_statValue__3_kAe')
+        .text();
+
+      activities.push({
+        date,
+        name,
+        distance,
+        time,
+      });
+    });
+
+    strava.push({
+      monthlyDistance,
+      monthlyTime,
+      activities,
+    });
+
+    if (distanceCheck !== null && distanceCheck !== monthlyDistance) {
+      strava.map((record) => xata.db.Strava.create(record));
+    }
 
     res.statusCode = 200;
     return res.json({
-      data,
+      strava,
     });
   } catch (e) {
     res.statusCode = 404;
