@@ -1,0 +1,12 @@
+{
+  "id": "mig_cqnt8djnfb5f1bmrcm30",
+  "parentID": "mig_cql9tgtql006e47gsk9g",
+  "checksum": "1:e022dcf4bce5c876621b4b01d1f41ae48eb6430813c610e296e109b00cdf6cd2",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Strava"
+      }
+    }
+  ]
+}
