@@ -41,7 +41,9 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
       games.push(obj as Games);
     });
 
-    games.map((game) => xata.db.Games.create(game));
+    games.forEach(function (game) {
+      xata.db.Games.create(game);
+    });
 
     res.statusCode = 200;
     return res.json({
