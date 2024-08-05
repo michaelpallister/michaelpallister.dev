@@ -19,10 +19,8 @@ const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const xata = getXataClient();
     const getFirstRecord = await xata.db.Strava.getFirst();
+    const recordId = getFirstRecord?.id;
     const distanceCheck = getFirstRecord?.monthlyDistance;
-    // if (records) {
-    //   records.map((record) => xata.db.Games.delete(record));
-    // }
 
     const response = await fetch(`https://www.strava.com/athletes/10793089`);
     const htmlString = await response.text();
@@ -66,7 +64,12 @@ const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
       activities,
     });
 
-    if (distanceCheck !== null && distanceCheck !== monthlyDistance) {
+    if (
+      distanceCheck !== null &&
+      distanceCheck !== monthlyDistance &&
+      recordId
+    ) {
+      await xata.db.Strava.delete(recordId);
       strava.map((record) => xata.db.Strava.create(record));
     }
 

@@ -12,8 +12,17 @@ interface Game {
   platform: string;
 }
 
-interface Games {
-  allGames: Game[];
+interface StravaType {
+  monthlyDistance: String;
+  monthlyTime: String;
+  activities: Activity[];
+}
+
+interface Activity {
+  date: string;
+  name: string;
+  distance: string;
+  time: string;
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -30,7 +39,13 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const About = ({ allGames, stravaData }) => {
+const About = ({
+  allGames,
+  stravaData,
+}: {
+  allGames: Game[];
+  stravaData: StravaType;
+}) => {
   const games = allGames.map((g: Game) => <GameCard key={g.id} {...g} />);
   const { monthlyDistance, monthlyTime, activities } = stravaData;
 
@@ -66,25 +81,28 @@ const About = ({ allGames, stravaData }) => {
           <h2 className="heading mt-20">Running</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mt-2 lg:mt-4">
             <div>
-              <h3>Monthly distance:</h3>
+              <h3 className="text-xl font-extrabold">Monthly distance:</h3>
               <p>{monthlyDistance}</p>
             </div>
             <div>
-              <h3>Monthly time:</h3>
+              <h3 className="text-xl font-extrabold">Monthly time:</h3>
               <p>{monthlyTime}</p>
             </div>
           </div>
-          <div className="grid grid-cols-4 mt-2 lg:mt-4">
-            {activities.map((activity: any[]) => {
-              return (
-                <>
-                  <div>{activity.date}</div>
-                  <div>{activity.name}</div>
-                  <div>{activity.distance}</div>
-                  <div>{activity.time}</div>
-                </>
-              );
-            })}
+          <div className="mb-4 mt-8">
+            <h3 className="text-xl font-extrabold">Latest runs:</h3>
+            <div className="grid grid-cols-3 mt-2">
+              {activities.map((activity: Activity, index) => {
+                return (
+                  <div key={index}>
+                    <p className="text-base font-bold">{activity.date}</p>
+                    <p>{activity.name}</p>
+                    <p>{activity.distance}</p>
+                    <p>{activity.time}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
         <section>
