@@ -1,0 +1,17 @@
+name: Update strava data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # every day at midnight
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch: 
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: https://www.michaelpallister.dev/api/strava
