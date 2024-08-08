@@ -18,6 +18,7 @@ type Activity = {
 const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const xata = getXataClient();
+    console.log(xata);
     const getFirstRecord = await xata.db.Strava.getFirst();
     const recordId = getFirstRecord?.id;
     const distanceCheck = getFirstRecord?.monthlyDistance;
@@ -70,6 +71,8 @@ const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
       recordId
     ) {
       await xata.db.Strava.delete(recordId);
+      strava.map((record) => xata.db.Strava.create(record));
+    } else {
       strava.map((record) => xata.db.Strava.create(record));
     }
 
