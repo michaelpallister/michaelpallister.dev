@@ -16,10 +16,10 @@ type Activity = {
 };
 
 const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
+  const xata = getXataClient();
+  const getFirstRecord = await xata.db.Strava.getFirst();
+
   try {
-    const xata = getXataClient();
-    console.log(xata);
-    const getFirstRecord = await xata.db.Strava.getFirst();
     const recordId = getFirstRecord?.id;
     const distanceCheck = getFirstRecord?.monthlyDistance;
 
@@ -65,15 +65,17 @@ const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
       activities,
     });
 
-    if (
-      distanceCheck !== null &&
-      distanceCheck !== monthlyDistance &&
-      recordId
-    ) {
+    if (recordId && distanceCheck === monthlyDistance) {
+      return res.json({
+        strava,
+      });
+    }
+
+    if (recordId && distanceCheck !== monthlyDistance) {
       await xata.db.Strava.delete(recordId);
-      strava.map((record) => xata.db.Strava.create(record));
+      await xata.db.Strava.create(strava);
     } else {
-      strava.map((record) => xata.db.Strava.create(record));
+      await xata.db.Strava.create(strava);
     }
 
     res.statusCode = 200;
