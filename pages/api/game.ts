@@ -11,14 +11,15 @@ interface Games {
 }
 
 const games = async (req: NextApiRequest, res: NextApiResponse) => {
+  const xata = getXataClient();
+  const records = await xata.db.Games.select(['id']).getAll();
+
+  if (records) {
+    records.forEach(function (record) {
+      xata.db.Games.delete(record);
+    });
+  }
   try {
-    const xata = getXataClient();
-    const records = await xata.db.Games.select(['id']).getAll();
-
-    if (records) {
-      records.map((record) => xata.db.Games.delete(record));
-    }
-
     const response = await fetch(`https://psnprofiles.com/micpuk`);
     const htmlString = await response.text();
     const $ = cheerio.load(htmlString);
@@ -41,9 +42,9 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
       games.push(obj as Games);
     });
 
-    games.forEach(function (game) {
-      xata.db.Games.create(game);
-    });
+    for (const game of games) {
+      await xata.db.Games.create(game);
+    }
 
     res.statusCode = 200;
     return res.json({
