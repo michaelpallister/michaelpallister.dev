@@ -1,11 +1,14 @@
 import Script from 'next/script';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import type { AppProps } from 'next/app';
+
+import { useEffect } from 'react';
+
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import * as gtag from '../lib/gtag';
 import '../styles/globals.css';
-
-import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
