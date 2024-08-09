@@ -92,6 +92,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </p>
         </footer>
       </div>
+      <SpeedInsights />
     </>
   );
 }
