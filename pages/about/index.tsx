@@ -27,7 +27,7 @@ interface Activity {
 
 export const getStaticProps: GetStaticProps = async () => {
   const xata = getXataClient();
-  const allGames = await xata.db.Games.getMany();
+  const allGames = await xata.db.Games.sort('date', 'desc').getMany();
   const runs = await xata.db.Strava.getFirst();
 
   return {

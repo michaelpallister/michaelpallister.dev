@@ -30,6 +30,18 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
       const platform = $(this).find('.platforms .platform').text();
       const platinum = $(this).find('.platinum').hasClass('earned');
       const image = $(this).find('.game img').attr('src');
+      const stringDate = $(this)
+        .find('.small-info:nth-of-type(3)')
+        .text()
+        .trim()
+        .split('\n')[0];
+
+      const cleanDateStr = stringDate.replace(/(\d+)(st|nd|rd|th)/, '$1');
+      const parsedDate = new Date(cleanDateStr);
+      const year = parsedDate.getFullYear();
+      const month = String(parsedDate.getMonth() + 1).padStart(2, '0');
+      const day = String(parsedDate.getDate()).padStart(2, '0');
+      const date = `${year}-${month}-${day}`;
 
       const obj = {
         title,
@@ -37,6 +49,7 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
         platform,
         platinum,
         image,
+        date: `${date}T00:00:00.000Z`, // RFC 3339 format
       };
 
       games.push(obj as Games);
