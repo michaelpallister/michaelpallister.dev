@@ -15,6 +15,7 @@ const tables = [
       { name: "platform", type: "string" },
       { name: "image", type: "string" },
       { name: "platinum", type: "bool" },
+      { name: "date", type: "datetime" },
     ],
   },
   {
