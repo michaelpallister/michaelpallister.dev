@@ -5,8 +5,6 @@ import type { AppProps } from 'next/app';
 
 import { useEffect } from 'react';
 
-import { SpeedInsights } from '@vercel/speed-insights/next';
-
 import * as gtag from '../lib/gtag';
 import '../styles/globals.css';
 
@@ -92,7 +90,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           </p>
         </footer>
       </div>
-      <SpeedInsights />
     </>
   );
 }
