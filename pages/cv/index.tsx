@@ -8,32 +8,45 @@ const CV = () => {
           CV | Michael Pallister | Frontend Developer | michaelpallister.dev
         </title>
       </Head>
-      <main className='container'>
-        <h1 className='heading mb-8'>CV, Michael Pallister</h1>
-        <section className='intro mb-6'>
-          <p className='intro__p'>
+      <main className="container">
+        <h1 className="heading mb-8">CV, Michael Pallister</h1>
+        <section className="intro mb-6">
+          <p className="intro__p">
             I have over a decades worth of experience working in the industry
             after graduating from Teesside University with a degree in Web
             Design.
           </p>
 
-          <p className='intro__p'>
+          <p className="intro__p">
             I&apos;ve worked with everyone from small agencies to large
             companies and in teams of varying sizes. I like semantics,
             performance and the little details.
           </p>
 
-          <p className='intro__p'>
+          <p className="intro__p">
             Over the years I&apos;ve gained experience working with a range of
             languages and technologies. I have listed some of these below.
-            Outside of work, in my free time I enjoy keeping up with the
-            Jamstack community, improving my accessibility knowledge and the
-            possibilities around edge computing.
           </p>
         </section>
-        <section className='job'>
-          <h2 className='job__title'>Stinkyink - Senior Frontend Developer</h2>
-          <p className='job__date'>January 2022 - Present</p>
+        <section className="job">
+          <h2 className="job__title">Bumble - Frontend Engineer</h2>
+          <p className="job__date">September 2022 - Present</p>
+          <p>
+            Bumble is an online dating and networking application launched in
+            2014 and is one of the most populat dating apps in the world with
+            over 50 million active users a month.
+          </p>
+          <ul className="tags">
+            <li className="tag">HTML</li>
+            <li className="tag">CSS</li>
+            <li className="tag">Typescript</li>
+            <li className="tag">React</li>
+            <li className="tag">PHP</li>
+          </ul>
+        </section>
+        <section className="job">
+          <h2 className="job__title">Stinkyink - Senior Frontend Developer</h2>
+          <p className="job__date">January 2022 - September 2022</p>
           <p>
             Stinkyink is one of the largest ink and toner retailers in the UK.
           </p>
@@ -53,21 +66,21 @@ const CV = () => {
             features required, re-designing and building internal dashboards and
             helping with an architecture review and upgrade.
           </p>
-          <ul className='tags'>
-            <li className='tag'>HTML</li>
-            <li className='tag'>CSS</li>
-            <li className='tag'>Javascript</li>
-            <li className='tag'>jQuery</li>
-            <li className='tag'>React</li>
-            <li className='tag'>Vue</li>
-            <li className='tag'>Ruby on Rails</li>
+          <ul className="tags">
+            <li className="tag">HTML</li>
+            <li className="tag">CSS</li>
+            <li className="tag">Javascript</li>
+            <li className="tag">jQuery</li>
+            <li className="tag">React</li>
+            <li className="tag">Vue</li>
+            <li className="tag">Ruby on Rails</li>
           </ul>
         </section>
-        <section className='job'>
-          <h2 className='job__title'>
+        <section className="job">
+          <h2 className="job__title">
             Northern Stable - Senior Frontend Developer
           </h2>
-          <p className='job__date'>June 2021 - December 2022</p>
+          <p className="job__date">June 2021 - December 2022</p>
           <p>
             Northern Stable would invest in ideas and build products that people
             could take into the world and help them gain further funding through
@@ -86,22 +99,22 @@ const CV = () => {
             an idea, help planning upcoming features, API design or any
             questions they had.
           </p>
-          <ul className='tags'>
-            <li className='tag'>HTML</li>
-            <li className='tag'>CSS</li>
-            <li className='tag'>Javascript</li>
-            <li className='tag'>React</li>
-            <li className='tag'>React Native</li>
-            <li className='tag'>Vue</li>
-            <li className='tag'>Node.js</li>
-            <li className='tag'>Pixi.js</li>
-            <li className='tag'>GSAP</li>
-            <li className='tag'>PHP - Laravel</li>
+          <ul className="tags">
+            <li className="tag">HTML</li>
+            <li className="tag">CSS</li>
+            <li className="tag">Javascript</li>
+            <li className="tag">React</li>
+            <li className="tag">React Native</li>
+            <li className="tag">Vue</li>
+            <li className="tag">Node.js</li>
+            <li className="tag">Pixi.js</li>
+            <li className="tag">GSAP</li>
+            <li className="tag">PHP - Laravel</li>
           </ul>
         </section>
-        <section className='job'>
-          <h2 className='job__title'>CookiesHQ - Senior Frontend Developer</h2>
-          <p className='job__date'>March 2021 - June 2021</p>
+        <section className="job">
+          <h2 className="job__title">CookiesHQ - Senior Frontend Developer</h2>
+          <p className="job__date">March 2021 - June 2021</p>
           <p>
             I worked across a range of products whilst working at Cookies. I
             helped build an interactive video platform that worked like
@@ -120,18 +133,18 @@ const CV = () => {
             should certain conditions not be met. The app gained successful
             funding from a Canadian health organisation.
           </p>
-          <ul className='tags'>
-            <li className='tag'>HTML</li>
-            <li className='tag'>CSS</li>
-            <li className='tag'>Javascript</li>
-            <li className='tag'>React</li>
-            <li className='tag'>React Native</li>
-            <li className='tag'>Ruby on Rails</li>
+          <ul className="tags">
+            <li className="tag">HTML</li>
+            <li className="tag">CSS</li>
+            <li className="tag">Javascript</li>
+            <li className="tag">React</li>
+            <li className="tag">React Native</li>
+            <li className="tag">Ruby on Rails</li>
           </ul>
         </section>
-        <section className='job'>
-          <h2 className='job__title'>CEF - Senior Frontend Developer</h2>
-          <p className='job__date'>May 2017 - March 2021</p>
+        <section className="job">
+          <h2 className="job__title">CEF - Senior Frontend Developer</h2>
+          <p className="job__date">May 2017 - March 2021</p>
           <p>
             I helped the business transition its presence online from a B2B only
             company to a B2B/B2C company.
@@ -161,20 +174,20 @@ const CV = () => {
             Before leaving, I was also part of a small team that was tasked with
             a massive technical upgrade across the whole stack.
           </p>
-          <ul className='tags'>
-            <li className='tag'>HTML</li>
-            <li className='tag'>CSS</li>
-            <li className='tag'>Javascript</li>
-            <li className='tag'>jQuery</li>
-            <li className='tag'>CoffeeScript</li>
-            <li className='tag'>React</li>
-            <li className='tag'>React Native</li>
-            <li className='tag'>Ruby on Rails</li>
+          <ul className="tags">
+            <li className="tag">HTML</li>
+            <li className="tag">CSS</li>
+            <li className="tag">Javascript</li>
+            <li className="tag">jQuery</li>
+            <li className="tag">CoffeeScript</li>
+            <li className="tag">React</li>
+            <li className="tag">React Native</li>
+            <li className="tag">Ruby on Rails</li>
           </ul>
         </section>
-        <section className='job'>
-          <h2 className='job__title'>Visualsoft - Senior Frontend Developer</h2>
-          <p className='job__date'>April 2013 - May 2017</p>
+        <section className="job">
+          <h2 className="job__title">Visualsoft - Senior Frontend Developer</h2>
+          <p className="job__date">April 2013 - May 2017</p>
           <p>
             As part of the R&amp;D team I was responsible for improving and
             modernising a large codebase. I&apos;d be looking to always be ahead
@@ -190,17 +203,17 @@ const CV = () => {
             I was also part of a small team that created the coding standards
             documentation for all developers and the linting rules.
           </p>
-          <ul className='tags'>
-            <li className='tag'>HTML</li>
-            <li className='tag'>CSS</li>
-            <li className='tag'>Javascript</li>
-            <li className='tag'>jQuery</li>
-            <li className='tag'>PHP - Laravel</li>
+          <ul className="tags">
+            <li className="tag">HTML</li>
+            <li className="tag">CSS</li>
+            <li className="tag">Javascript</li>
+            <li className="tag">jQuery</li>
+            <li className="tag">PHP - Laravel</li>
           </ul>
         </section>
-        <section className='job'>
-          <h2 className='job__title'>Teesside University - Web Developer</h2>
-          <p className='job__date'>September 2012 - April 2013</p>
+        <section className="job">
+          <h2 className="job__title">Teesside University - Web Developer</h2>
+          <p className="job__date">September 2012 - April 2013</p>
           <p>
             I was responsible for maintaining and developing the
             University&apos;s website and internal tools, taking ideas from a
@@ -217,18 +230,18 @@ const CV = () => {
             allowed departments to visualise the data we were collecting was a
             big part of the job.
           </p>
-          <ul className='tags'>
-            <li className='tag'>HTML</li>
-            <li className='tag'>CSS</li>
-            <li className='tag'>Javascript</li>
-            <li className='tag'>jQuery</li>
-            <li className='tag'>PHP - CakePHP</li>
-            <li className='tag'>ColdFusion</li>
+          <ul className="tags">
+            <li className="tag">HTML</li>
+            <li className="tag">CSS</li>
+            <li className="tag">Javascript</li>
+            <li className="tag">jQuery</li>
+            <li className="tag">PHP - CakePHP</li>
+            <li className="tag">ColdFusion</li>
           </ul>
         </section>
-        <section className='job'>
-          <h2 className='job__title'>Visualsoft - Web Developer</h2>
-          <p className='job__date'>Jul 2010 - September 2012</p>
+        <section className="job">
+          <h2 className="job__title">Visualsoft - Web Developer</h2>
+          <p className="job__date">Jul 2010 - September 2012</p>
           <p>
             I helped build the customer knowledge base. This would allow
             customers to search for their questions before submitting them to
@@ -246,12 +259,12 @@ const CV = () => {
             would later be used by all the development teams to reduce the build
             time of any project.
           </p>
-          <ul className='tags'>
-            <li className='tag'>HTML</li>
-            <li className='tag'>CSS</li>
-            <li className='tag'>Javascript</li>
-            <li className='tag'>jQuery</li>
-            <li className='tag'>PHP - Kohana</li>
+          <ul className="tags">
+            <li className="tag">HTML</li>
+            <li className="tag">CSS</li>
+            <li className="tag">Javascript</li>
+            <li className="tag">jQuery</li>
+            <li className="tag">PHP - Kohana</li>
           </ul>
         </section>
       </main>
