@@ -1,7 +1,7 @@
-import type { GetStaticProps } from 'next';
-import Head from 'next/head';
-import { getXataClient, XataClient } from '../../lib/xata';
-import GameCard from '../../components/gameCard';
+import type { GetStaticProps } from "next";
+import Head from "next/head";
+import { getXataClient, XataClient } from "../../lib/xata";
+import GameCard from "../../components/gameCard";
 
 interface Game {
   id: string;
@@ -27,7 +27,7 @@ interface Activity {
 
 export const getStaticProps: GetStaticProps = async () => {
   const xata = getXataClient();
-  const allGames = await xata.db.Games.sort('date', 'desc').getMany();
+  const allGames = await xata.db.Games.sort("date", "desc").getMany();
   const runs = await xata.db.Strava.getFirst();
 
   return {
@@ -46,7 +46,9 @@ const About = ({
   allGames: Game[];
   stravaData: StravaType;
 }) => {
-  const games = allGames.map((g: Game) => <GameCard key={g.id} {...g} />);
+  const games = allGames.map((g: Game, index) => (
+    <GameCard key={g.id} index={index} {...g} />
+  ));
   const { monthlyDistance, monthlyTime, activities } = stravaData;
 
   return (
@@ -91,10 +93,10 @@ const About = ({
           </div>
           <div className="mb-4 mt-8">
             <h3 className="text-xl font-extrabold">Latest runs:</h3>
-            <div className="grid grid-cols-3 mt-2">
+            <div className="md:grid grid-cols-3 mt-2">
               {activities.map((activity: Activity, index) => {
                 return (
-                  <div key={index}>
+                  <div key={index} className="mb-4 lg:mb-0">
                     <p className="text-base font-bold">{activity.date}</p>
                     <p>{activity.name}</p>
                     <p>{activity.distance}</p>
