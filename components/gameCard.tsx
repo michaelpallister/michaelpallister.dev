@@ -6,24 +6,31 @@ const GameCard = ({
   image,
   platform,
   platinum,
+  index,
 }: {
   title: string;
   completion: string;
   image: string;
   platform: string;
   platinum: boolean;
+  index: number;
 }) => {
   const platinumClassName =
-    'bg-gradient-to-r from-slate-500 to-slate-800 rounded-bl rounded-br p-4 h-full';
+    "bg-gradient-to-r from-slate-500 to-slate-800 rounded-bl rounded-br p-4 h-full";
 
   return (
-    <li className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+    <li className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% relative">
+      {index === 0 ? (
+        <div className="absolute right-1 bottom-1 text-[10px] tracking-wider text-white bg-emerald-500 p-1 font-semibold opacity-85">
+          Currently playing
+        </div>
+      ) : null}
       <div className="h-0.5 bg-gradient-to-l from-surfie-green to-cyan rounded-tl rounded-tr"></div>
       <div
         className={
           platinum
             ? platinumClassName
-            : 'bg-mine-shaft-solid rounded-bl rounded-br p-4 h-full'
+            : "bg-mine-shaft-solid rounded-bl rounded-br p-4 h-full"
         }
       >
         <div className="flex items-start justify-between h-full">
