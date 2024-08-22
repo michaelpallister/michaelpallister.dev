@@ -21,7 +21,7 @@ const GameCard = ({
   return (
     <li className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% relative">
       {index === 0 ? (
-        <div className="absolute right-1 bottom-1 text-[10px] tracking-wider text-white bg-emerald-500 p-1 font-semibold opacity-85">
+        <div className="absolute right-1 bottom-1 text-[10px] tracking-wider text-white bg-emerald-500 p-1 font-semibold opacity-85 z-10">
           Currently playing
         </div>
       ) : null}
