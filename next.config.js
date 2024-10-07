@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['i.psnprofiles.com'],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "i.psnprofiles.com",
+      },
+    ],
   },
 };
 

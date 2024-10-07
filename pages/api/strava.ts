@@ -1,6 +1,6 @@
-import * as cheerio from 'cheerio';
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { getXataClient, StravaRecord } from '../../lib/xata';
+import * as cheerio from "cheerio";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { getXataClient } from "../../lib/xata";
 
 type Activities = {
   monthlyDistance: string;
@@ -32,7 +32,10 @@ const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
       '[data-cy="monthly-stat-distance"] .Stat_statValue__3_kAe, [data-cy="monthly-stat-time"] .Stat_statValue__3_kAe'
     );
 
-    const monthlyDistance = distanceAndTimeElements.eq(0).text();
+    const monthlyDistance = distanceAndTimeElements
+      .eq(0)
+      .text()
+      .replace(/\s+(km)/g, "$1");
     const monthlyTime = distanceAndTimeElements.eq(1).text();
 
     const recentActivities = $('[data-testid="recent-activity"]');
@@ -40,16 +43,16 @@ const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
     const activities: Activity[] = [];
 
     recentActivities.each(function (this) {
-      const date = $(this).find('.RecentActivities_timestamp__pB9a8').text();
+      const date = $(this).find(".RecentActivities_timestamp__pB9a8").text();
       const name = $(this).find('[data-cy="recent-activity-name"]').text();
-      const distance = $(this)
-        .find(
-          '.styles_listStats__wQVTf li:first-of-type .Stat_statValue__3_kAe'
-        )
-        .text();
-      const time = $(this)
-        .find('.styles_listStats__wQVTf li:last-of-type .Stat_statValue__3_kAe')
-        .text();
+      const distanceElevationTime = $(this)
+        .find('[data-cy="activity-stats-stat"] div div')
+        .text()
+        .replace(/\s+(km|m)/g, "$1")
+        .split(/(?<=km)|(?<=m)/)
+        .map((s) => s.trim()); // ['12km', '13m', '10:10']
+      const distance = distanceElevationTime[0];
+      const time = distanceElevationTime[2];
 
       activities.push({
         date,
