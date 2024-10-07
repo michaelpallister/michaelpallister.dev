@@ -95,7 +95,6 @@ const About = ({
             <h3 className="text-xl font-extrabold">Latest runs:</h3>
             <div className="md:grid grid-cols-3 mt-2">
               {activities.map((activity: Activity, index) => {
-                console.log(activity);
                 return (
                   <div key={index} className="mb-4 lg:mb-0">
                     <p className="text-base font-bold">{activity.date}</p>
