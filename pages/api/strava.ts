@@ -15,6 +15,28 @@ type Activity = {
   time: string;
 };
 
+function convertRelativeDates(dateStr: string): string {
+  const today = new Date();
+
+  if (dateStr === "Today") {
+    return today.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  } else if (dateStr === "Yesterday") {
+    const yesterday = new Date(today);
+    yesterday.setDate(today.getDate() - 1);
+    return yesterday.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  } else {
+    return dateStr;
+  }
+}
+
 const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
   const xata = getXataClient();
   const getFirstRecord = await xata.db.Strava.getFirst();
@@ -43,7 +65,9 @@ const Strava = async (req: NextApiRequest, res: NextApiResponse) => {
     const activities: Activity[] = [];
 
     recentActivities.each(function (this) {
-      const date = $(this).find(".RecentActivities_timestamp__pB9a8").text();
+      const date = convertRelativeDates(
+        $(this).find(".RecentActivities_timestamp__pB9a8").text()
+      );
       const name = $(this).find('[data-cy="recent-activity-name"]').text();
       const distanceElevationTime = $(this)
         .find('[data-cy="activity-stats-stat"] div div')

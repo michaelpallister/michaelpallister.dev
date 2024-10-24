@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 const CV = () => {
   return (
@@ -33,7 +33,7 @@ const CV = () => {
           <p className="job__date">September 2022 - Present</p>
           <p>
             Bumble is an online dating and networking application launched in
-            2014 and is one of the most populat dating apps in the world with
+            2014 and is one of the most popular dating apps in the world with
             over 50 million active users a month.
           </p>
           <ul className="tags">
