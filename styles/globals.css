@@ -25,17 +25,17 @@ li {
 }
 
 .heading {
-  @apply text-3xl font-extrabold flex items-center border-b border-mine-shaft-solid pb-2 tracking-tight text-gray-300;
+  @apply text-3xl font-extrabold flex items-center border-b border-mine-shaft-solid pb-2 tracking-tight text-gray-300 print:text-2xl print:mt-8 print:text-black;
 }
 
 .about__p,
 .intro__p {
-  @apply mt-2 lg:mt-6 text-gray-300;
+  @apply mt-2 lg:mt-6 text-gray-300 print:text-black print:max-w-full;
   max-width: 70ch;
 }
 
 .job {
-  @apply mb-12;
+  @apply mb-12 print:mb-8;
 }
 
 .job__title {
@@ -48,6 +48,14 @@ li {
 
 .job p:not(.job__date) {
   @apply mb-4 print:max-w-full;
+}
+
+.job__points {
+  @apply mb-4 ml-4;
+}
+
+.job__points > li {
+  @apply mb-4 pl-2 list-disc print:text-black;
   max-width: 70ch;
 }
 
@@ -56,13 +64,17 @@ li {
 }
 
 .tags:before {
-  @apply print:content-['Stack'] block w-full font-medium underline;
+  @apply print:content-['Stack'] print:text-sm print:font-semibold print:text-black block w-full underline;
 }
 
 .tag {
-  @apply bg-mine-shaft-solid text-gray-300 text-xs px-3 py-2 print:p-0 rounded;
+  @apply bg-mine-shaft-solid text-gray-300 text-xs px-3 py-2 print:p-0 rounded print:text-black;
 }
 
 .tag:not(:last-of-type) {
   @apply print:after:content-[','];
+}
+
+@page {
+  margin: 0.5in 0;
 }

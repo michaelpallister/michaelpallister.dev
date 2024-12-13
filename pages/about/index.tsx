@@ -68,8 +68,8 @@ const About = ({
         </p>
         <p className="about__p">
           Along the way, I have been fortunate enough to produce work for global
-          brands like the BBC, Mitre, Gola, Kickers and the UK&#39;s largest
-          electrical wholesaler CEF.
+          brands like the BBC, Mitre, Gola, Kickers, the UK&#39;s largest
+          electrical wholesaler CEF and more recently Bumble.
         </p>
         <p className="about__p">
           I enjoy creating scalable and maintainable front-ends.
@@ -107,12 +107,14 @@ const About = ({
             </div>
           </div>
         </section>
-        <section>
-          <h2 className="heading mt-20">Recently played</h2>
-          <ul className="mb-10 grid md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mt-2 lg:mt-4">
-            {games}
-          </ul>
-        </section>
+        {games.length > 0 && (
+          <section>
+            <h2 className="heading mt-20">Recently played</h2>
+            <ul className="mb-10 grid md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mt-2 lg:mt-4">
+              {games}
+            </ul>
+          </section>
+        )}
       </main>
     </div>
   );
