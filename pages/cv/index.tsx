@@ -9,33 +9,48 @@ const CV = () => {
         </title>
       </Head>
       <main className="container">
-        <h1 className="heading mb-8">CV, Michael Pallister</h1>
+        <h1 className="heading mb-8">
+          CV - Michael Pallister, Frontend Developer
+        </h1>
         <section className="intro mb-6">
           <p className="intro__p">
-            I have over a decades worth of experience working in the industry
-            after graduating from Teesside University with a degree in Web
-            Design.
+            A frontend developer with over a 14-years of experience working in
+            the industry after graduating from Teesside University with a degree
+            in Web Design.
           </p>
 
           <p className="intro__p">
-            I&apos;ve worked with everyone from small agencies to large
-            companies and in teams of varying sizes. I like semantics,
-            performance and the little details.
-          </p>
-
-          <p className="intro__p">
-            Over the years I&apos;ve gained experience working with a range of
-            languages and technologies. I have listed some of these below.
+            I have experience building high-performance web applications and
+            interfaces. Proficient in crafting seamless user experiences,
+            optimising performance, and leading frontend development
+            initiatives.
           </p>
         </section>
         <section className="job">
           <h2 className="job__title">Bumble - Frontend Engineer</h2>
           <p className="job__date">September 2022 - Present</p>
-          <p>
-            Bumble is an online dating and networking application launched in
-            2014 and is one of the most popular dating apps in the world with
-            over 50 million active users a month.
-          </p>
+          <ul className="job__points">
+            <li>
+              Collaborated with cross-functional teams to optimise performance
+              and maintain high-quality user experiences for one of the
+              world&apos;s leading dating apps.
+            </li>
+            <li>
+              Contributed to the development and refinement of Bumble&apos;s
+              design system by building reusable, accessible components and
+              documenting best practices for scalability and consistency across
+              teams.
+            </li>
+            <li>
+              Enhanced accessibility across the platform, ensuring compliance
+              with WCAG 2.1 standards.
+            </li>
+            <li>
+              Played a key role in migrating legacy frontend code to modern
+              frameworks, improving maintainability and enabling faster feature
+              delivery.
+            </li>
+          </ul>
           <ul className="tags">
             <li className="tag">HTML</li>
             <li className="tag">CSS</li>
@@ -47,25 +62,26 @@ const CV = () => {
         <section className="job">
           <h2 className="job__title">Stinkyink - Senior Frontend Developer</h2>
           <p className="job__date">January 2022 - September 2022</p>
-          <p>
-            Stinkyink is one of the largest ink and toner retailers in the UK.
-          </p>
-          <p>
-            I&apos;ve massively improved the performance of the web app. The
-            average page size has more than halved with no real change to the
-            content or design on these pages.
-          </p>
-          <p>
-            I&apos;ve also built an internal browser extension that helps the
-            customer services team with some of their daily tasks.
-          </p>
-          <p>
-            I&apos;m also forming some brand guidelines, a component library,
-            planning the migration of a extensive legacy codebase to Typescript,
-            creating a test suite for the frontend, building out any new
-            features required, re-designing and building internal dashboards and
-            helping with an architecture review and upgrade.
-          </p>
+          <ul className="job__points">
+            <li>
+              Reduced the average page size by 60%, improving load times without
+              altering design or content.
+            </li>
+            <li>
+              Built a browser extension to streamline daily operations for the
+              customer services team.
+            </li>
+            <li>
+              Championed the creation of a comprehensive component library,
+              design system, and test suite, establishing a foundation for
+              scalable, consistent, and efficient frontend development.
+            </li>
+            <li>
+              Started the migration of a large legacy codebase to TypeScript,
+              modernising the architecture for improved scalability and
+              maintainability.
+            </li>
+          </ul>
           <ul className="tags">
             <li className="tag">HTML</li>
             <li className="tag">CSS</li>
@@ -80,25 +96,19 @@ const CV = () => {
           <h2 className="job__title">
             Northern Stable - Senior Frontend Developer
           </h2>
-          <p className="job__date">June 2021 - December 2022</p>
-          <p>
-            Northern Stable would invest in ideas and build products that people
-            could take into the world and help them gain further funding through
-            investment or sales.
-          </p>
-          <p>
-            I helped launch the UK&apos;s fastest-growing digital appointments
-            app, a referral network, a suite of products aimed at converting
-            customers in the e-commerce and gambling industries and a video
-            email SaaS web app and browser extension.
-          </p>
-          <p>
-            I would also support the companies that had gained successful
-            funding and started building their dev teams with their frontend
-            needs. This could be a feature that needs writing, consultation on
-            an idea, help planning upcoming features, API design or any
-            questions they had.
-          </p>
+          <p className="job__date">June 2021 - December 2021 </p>
+          <ul className="job__points">
+            <li>
+              Contributed to the development of innovative e-commerce solutions
+              and successfully helped launch several SaaS products, driving
+              business growth and enhancing user experiences.
+            </li>
+            <li>
+              Collaborated with SaaS startups to support their frontend
+              development, including feature design, API planning, and team
+              consultation.
+            </li>
+          </ul>
           <ul className="tags">
             <li className="tag">HTML</li>
             <li className="tag">CSS</li>
@@ -115,24 +125,16 @@ const CV = () => {
         <section className="job">
           <h2 className="job__title">CookiesHQ - Senior Frontend Developer</h2>
           <p className="job__date">March 2021 - June 2021</p>
-          <p>
-            I worked across a range of products whilst working at Cookies. I
-            helped build an interactive video platform that worked like
-            Netflix&apos;s Bandersnatch where the user can decide the journey
-            the film they&apos;re watching would take.
-          </p>
-          <p>
-            I also worked with the BBC to develop the BBC Maestro video content
-            platform, providing online video courses from some of the most
-            famous names across the world.
-          </p>
-          <p>
-            I also created the initial web and iOS app MVP for a senior citizen
-            monitoring health app. The app, aimed at care homes and families who
-            wanted to monitor their relatives would provide alerts to a user
-            should certain conditions not be met. The app gained successful
-            funding from a Canadian health organisation.
-          </p>
+          <ul className="job__points">
+            <li>
+              Created an MVP for an innovative health monitoring app that
+              secured funding from a Canadian healthcare organisation.
+            </li>
+            <li>
+              Worked with the BBC to deliver the BBC Maestro video content
+              platform.
+            </li>
+          </ul>
           <ul className="tags">
             <li className="tag">HTML</li>
             <li className="tag">CSS</li>
@@ -145,35 +147,24 @@ const CV = () => {
         <section className="job">
           <h2 className="job__title">CEF - Senior Frontend Developer</h2>
           <p className="job__date">May 2017 - March 2021</p>
-          <p>
-            I helped the business transition its presence online from a B2B only
-            company to a B2B/B2C company.
-          </p>
-          <p>
-            Being the largest electrical wholesaler in the UK we had to ensure
-            that the change wouldn&apos;t cause any issues for our existing
-            business customers, whilst fulfilling the demands and expectations
-            of our new customers who were shopping with us for the first time.
-          </p>
-          <p>
-            My role involved a lot of performance work, focussing on driving
-            down the page size, increasing the speed and optimising the customer
-            journey.
-          </p>
-          <p>
-            I was also responsible for starting the frontend component library,
-            mentoring junior developers and helping any other colleagues with
-            any queries they had related to the frontend of the website.
-          </p>
-          <p>
-            We also rolled out the company&apos;s first mobile app on both Apple
-            and Android devices. I was heavily involved in building out the
-            frontend of the app in React Native and the API that went with it.
-          </p>
-          <p>
-            Before leaving, I was also part of a small team that was tasked with
-            a massive technical upgrade across the whole stack.
-          </p>
+          <ul className="job__points">
+            <li>
+              Helped transition the company from a B2B-only model to a B2B/B2C
+              platform.
+            </li>
+            <li>
+              Optimised the website performance, cutting load times and
+              enhancing the customer journey.
+            </li>
+            <li>
+              Built the MVP for the company&apos;s first mobile app using React
+              Native.
+            </li>
+            <li>
+              Established a frontend component library and mentored junior
+              developers.
+            </li>
+          </ul>
           <ul className="tags">
             <li className="tag">HTML</li>
             <li className="tag">CSS</li>
@@ -188,21 +179,21 @@ const CV = () => {
         <section className="job">
           <h2 className="job__title">Visualsoft - Senior Frontend Developer</h2>
           <p className="job__date">April 2013 - May 2017</p>
-          <p>
-            As part of the R&amp;D team I was responsible for improving and
-            modernising a large codebase. I&apos;d be looking to always be ahead
-            of the curve in e-commerce by providing features and updates for our
-            clients that meant they would stay ahead in their markets.
-          </p>
-          <p>
-            I helped plan and build the company&apos;s first responsive website,
-            this then led to re-writing the component library to be responsive
-            so we could roll the new designs out to our clients.
-          </p>
-          <p>
-            I was also part of a small team that created the coding standards
-            documentation for all developers and the linting rules.
-          </p>
+          <ul className="job__points">
+            <li>
+              Contributed to the creation of MVPs and the development of new
+              features as a key member of the R&D team, supporting innovation
+              and product evolution.
+            </li>
+            <li>
+              Pioneered the company&apos;s first responsive e-commerce
+              templates.
+            </li>
+            <li>
+              Authored coding standards and linting rules for frontend
+              development.
+            </li>
+          </ul>
           <ul className="tags">
             <li className="tag">HTML</li>
             <li className="tag">CSS</li>
@@ -214,22 +205,17 @@ const CV = () => {
         <section className="job">
           <h2 className="job__title">Teesside University - Web Developer</h2>
           <p className="job__date">September 2012 - April 2013</p>
-          <p>
-            I was responsible for maintaining and developing the
-            University&apos;s website and internal tools, taking ideas from a
-            prototype to a finished feature. I was designing and working across
-            the full stack.
-          </p>
-          <p>
-            Alongside this, I was helping build a completely bespoke CMS that
-            allowed internal departments to update the areas of the website they
-            owned.
-          </p>
-          <p>
-            Writing internal tooling, building dashboards and reports that
-            allowed departments to visualise the data we were collecting was a
-            big part of the job.
-          </p>
+          <ul className="job__points">
+            <li>
+              Maintained and enhanced the university&apos;s website and built a
+              custom CMS for internal departments that allowed them to update
+              their content.
+            </li>
+            <li>
+              Designed dashboards and data visualisation tools to help with
+              marketing and student engagement.
+            </li>
+          </ul>
           <ul className="tags">
             <li className="tag">HTML</li>
             <li className="tag">CSS</li>
@@ -242,23 +228,16 @@ const CV = () => {
         <section className="job">
           <h2 className="job__title">Visualsoft - Web Developer</h2>
           <p className="job__date">Jul 2010 - September 2012</p>
-          <p>
-            I helped build the customer knowledge base. This would allow
-            customers to search for their questions before submitting them to
-            the support team. These changes resulted in the number tickets we
-            had drastically falling and meant the support team could focus more
-            on the customers who needed support instead of &quot;how-to&quot;
-            type questions.
-          </p>
-          <p>
-            I was also initially creating sites from PSDs supplied by the
-            in-house design team. I started to noticed a lot of repeat
-            components and features. Because of this I started to document my
-            findings. I was then moved into a role where I was tasked with
-            building out the first version of a component library. The library
-            would later be used by all the development teams to reduce the build
-            time of any project.
-          </p>
+          <ul className="job__points">
+            <li>
+              Helped build a custom customer knowledge base, reducing support
+              tickets significantly.
+            </li>
+            <li>
+              Initiated the company&apos;s first component library, optimising
+              development workflows.
+            </li>
+          </ul>
           <ul className="tags">
             <li className="tag">HTML</li>
             <li className="tag">CSS</li>
