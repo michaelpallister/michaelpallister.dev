@@ -78,7 +78,6 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
       games,
     });
   } catch (e) {
-    console.error(e);
     res.status(500).json({
       error: `Unable to find games`,
     });
