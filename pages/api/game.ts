@@ -1,4 +1,4 @@
-import * as cheerio from "cheerio";
+import { chromium } from "playwright";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getXataClient } from "../../lib/xata";
 
@@ -8,6 +8,7 @@ interface Games {
   platinum: boolean;
   image: string;
   platform: string;
+  date: string;
 }
 
 const games = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -15,59 +16,70 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
   const records = await xata.db.Games.select(["id"]).getAll();
 
   if (records) {
-    records.forEach(function (record) {
-      xata.db.Games.delete(record);
-    });
+    for (const record of records) {
+      await xata.db.Games.delete(record);
+    }
   }
+
   try {
-    const response = await fetch(`https://psnprofiles.com/micpuk`);
-    const htmlString = await response.text();
-    const $ = cheerio.load(htmlString);
-    const games: Games[] = [];
-    $("#gamesTable tr:nth-of-type(-n + 12)").each(function (this) {
-      const title = $(this).find(".title").text();
-      const completion = $(this).find(".progress-bar span").text();
-      const platform = $(this)
-        .find(".platforms .platform:first-of-type")
-        .text();
-      const platinum = $(this).find(".platinum").hasClass("earned");
-      const image = $(this).find(".game img").attr("src");
-      const stringDate = $(this)
-        .find(".small-info:nth-of-type(3)")
-        .text()
-        .trim()
-        .split("\n")[0];
+    const browser = await chromium.launch({ headless: false });
+    const page = await browser.newPage();
 
-      const cleanDateStr = stringDate.replace(/(\d+)(st|nd|rd|th)/, "$1");
-      const parsedDate = new Date(cleanDateStr);
-      const year = parsedDate.getFullYear();
-      const month = String(parsedDate.getMonth() + 1).padStart(2, "0");
-      const day = String(parsedDate.getDate()).padStart(2, "0");
-      const date = `${year}-${month}-${day}`;
+    await page.goto("https://psnprofiles.com/micpuk");
 
-      const obj = {
-        title,
-        completion,
-        platform,
-        platinum,
-        image,
-        date: `${date}T00:00:00.000Z`, // RFC 3339 format
-      };
+    const games: Games[] = await page.evaluate(() => {
+      const rows = Array.from(
+        document.querySelectorAll("#gamesTable tr:nth-of-type(-n + 12)")
+      );
+      return rows.map((row) => {
+        const title = row.querySelector(".title")?.textContent?.trim() || "";
+        const completion =
+          row.querySelector(".progress-bar span")?.textContent?.trim() || "";
+        const platform =
+          row
+            .querySelector(".platforms .platform:first-of-type")
+            ?.textContent?.trim() || "";
+        const platinum =
+          row.querySelector(".platinum")?.classList.contains("earned") || false;
+        const image =
+          (row.querySelector(".game img") as HTMLImageElement)?.src || "";
+        const stringDate =
+          row
+            .querySelector(".small-info:nth-of-type(3)")
+            ?.textContent?.trim()
+            ?.split("\n")[0] || "";
 
-      games.push(obj as Games);
+        // Clean and parse the date
+        const cleanDateStr = stringDate.replace(/(\d+)(st|nd|rd|th)/, "$1");
+        const parsedDate = new Date(cleanDateStr);
+        const year = parsedDate.getFullYear();
+        const month = String(parsedDate.getMonth() + 1).padStart(2, "0");
+        const day = String(parsedDate.getDate()).padStart(2, "0");
+        const date = `${year}-${month}-${day}T00:00:00.000Z`;
+
+        return {
+          title,
+          completion,
+          platform,
+          platinum,
+          image,
+          date,
+        };
+      });
     });
+
+    await browser.close();
 
     for (const game of games) {
       await xata.db.Games.create(game);
     }
 
-    res.statusCode = 200;
-    return res.json({
+    res.status(200).json({
       games,
     });
   } catch (e) {
-    res.statusCode = 404;
-    return res.json({
+    console.error(e);
+    res.status(500).json({
       error: `Unable to find games`,
     });
   }
