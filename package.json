@@ -13,7 +13,7 @@
     "@vercel/speed-insights": "^1.0.12",
     "@xata.io/client": "^0.30.0",
     "cheerio": "^1.0.0-rc.11",
-    "next": "14.2.15",
+    "next": "14.2.21",
     "playwright": "^1.49.1",
     "react": "18.1.0",
     "react-dom": "18.1.0"
