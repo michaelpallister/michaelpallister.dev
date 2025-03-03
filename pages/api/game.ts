@@ -22,8 +22,22 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
-    const browser = await chromium.launch({ headless: false });
-    const page = await browser.newPage();
+    const browser = await chromium.launch({
+      headless: true,
+      args: [
+        "--use-gl=desktop",
+        "--disable-blink-features=AutomationControlled",
+        "--disable-dev-shm-usage",
+        "--no-sandbox",
+      ],
+    });
+
+    const context = await browser.newContext({
+      userAgent:
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    });
+
+    const page = await context.newPage();
 
     await page.goto("https://psnprofiles.com/micpuk");
 
@@ -31,6 +45,7 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
       const rows = Array.from(
         document.querySelectorAll("#gamesTable tr:nth-of-type(-n + 12)")
       );
+
       return rows.map((row) => {
         const title = row.querySelector(".title")?.textContent?.trim() || "";
         const completion =
@@ -78,8 +93,10 @@ const games = async (req: NextApiRequest, res: NextApiResponse) => {
       games,
     });
   } catch (e) {
+    console.error("Error scraping PSNProfiles:", e);
     res.status(500).json({
       error: `Unable to find games`,
+      details: e instanceof Error ? e.message : String(e),
     });
   }
 };

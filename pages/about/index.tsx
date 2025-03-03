@@ -2,6 +2,7 @@ import type { GetStaticProps } from "next";
 import Head from "next/head";
 import { getXataClient, XataClient } from "../../lib/xata";
 import GameCard from "../../components/gameCard";
+import { yearsSince } from "../../utils/yearsSince";
 
 interface Game {
   id: string;
@@ -75,9 +76,9 @@ const About = ({
           I enjoy creating scalable and maintainable front-ends.
         </p>
         <p className="about__p">
-          I&#39;m a dad to a 3-year old girl and in the little spare time I
-          have; I enjoy gaming, collecting game consoles, tinkering with
-          electronics, cars and running.
+          I&#39;m a dad to a {yearsSince("2021-02-04")}-year old girl and in the
+          little spare time I have; I enjoy gaming, collecting game consoles,
+          tinkering with electronics, cars and running.
         </p>
         <section>
           <h2 className="heading mt-20">Running</h2>
