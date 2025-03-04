@@ -16,8 +16,7 @@ jobs:
         with:
           node-version: 18  
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps 
-
-      - name: Run Curl Request
-        run: curl https://www.michaelpallister.dev/api/game
+      - name: Install Playwright and Run Curl
+        run: |
+          npx playwright install --with-deps
+          curl https://www.michaelpallister.dev/api/game
