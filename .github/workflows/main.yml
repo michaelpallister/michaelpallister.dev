@@ -11,6 +11,8 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
     - name: curl
       uses: wei/curl@master
       with:
