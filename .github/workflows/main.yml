@@ -11,9 +11,15 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: curl
-      uses: wei/curl@master
-      with:
-        args: https://www.michaelpallister.dev/api/game
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18  
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps 
+
+      - name: Run API call with curl
+        uses: wei/curl@master
+        with:
+          args: https://www.michaelpallister.dev/api/game
