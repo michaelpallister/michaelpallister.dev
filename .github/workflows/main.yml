@@ -19,7 +19,5 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps 
 
-      - name: Run API call with curl
-        uses: wei/curl@master
-        with:
-          args: https://www.michaelpallister.dev/api/game
+      - name: Run Curl Request
+        run: curl https://www.michaelpallister.dev/api/game
